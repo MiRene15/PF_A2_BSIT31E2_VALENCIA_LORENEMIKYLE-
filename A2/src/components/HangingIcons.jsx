@@ -1,30 +1,49 @@
-import React from 'react';
-import { Toggles2, CpuFill, Tools } from 'react-bootstrap-icons';
+import React from "react";
+import { LightningCharge, MusicNoteBeamed, Speaker } from "react-bootstrap-icons";
 
-const items = [
-  { icon: <Toggles2 />, title: 'Featured title' },
-  { icon: <CpuFill />, title: 'Featured title' },
-  { icon: <Tools />, title: 'Featured title' },
+const services = [
+  {
+    icon: <LightningCharge size={32} color="#001e82" />,
+    title: "High-Quality Streaming",
+    description:
+      "Stream music in crystal-clear audio with adaptive bitrate technology.",
+  },
+  {
+    icon: <MusicNoteBeamed size={32} color="#001e82" />,
+    title: "Studio Tools",
+    description:
+      "Upload tracks, manage albums, and monitor performance analytics.",
+  },
+  {
+    icon: <Speaker size={32} color="#001e82" />,
+    title: "Smart Recommendations",
+    description:
+      "Receive intelligent song suggestions based on your activity.",
+  },
 ];
 
-function HangingIcons() {
+const HangingIcons = () => {
   return (
-    <div className="container px-4 py-5" id="hanging-icons">
-      <h2 className="pb-2 border-bottom">Hanging icons</h2>
+    <div className="container px-4 py-5">
+      <h2 className="pb-2 border-bottom">Music Services</h2>
+
       <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
-        {items.map((item, idx) => (
-          <div className="col d-flex align-items-start" key={idx}>
-            <div className="icon-square bg-light text-dark flex-shrink-0 me-3">{item.icon}</div>
+        {services.map((item, index) => (
+          <div className="col d-flex align-items-start" key={index}>
+            <div className="bg-light text-dark p-3 rounded me-3 shadow-sm d-flex align-items-center justify-content-center">
+              {item.icon}
+            </div>
+
             <div>
-              <h2>{item.title}</h2>
-              <p>Paragraph beneath the heading to explain the heading.</p>
-              <a href="#" className="btn btn-primary">Primary button</a>
+              <h4>{item.title}</h4>
+              <p>{item.description}</p>
+              <button className="btn btn-primary">Explore</button>
             </div>
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default HangingIcons;
